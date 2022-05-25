@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pokemon/data/network/pokemon_remote_source.dart';
 import 'package:pokemon/di/injectable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokemon/presentation/bloc/cubit/fetch_pokemons_cubit.dart';
 import 'package:pokemon/presentation/bloc/main_navbar/main_navbar_cubit.dart';
 import 'package:pokemon/presentation/journey/favorite/favorite_screen.dart';
 import 'package:pokemon/presentation/journey/main/main_bottom_navigation.dart';
@@ -18,14 +19,14 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   late MainNavbarCubit mainNavbarCubit;
+  late FetchPokemonsCubit fetchPokemonsCubit;
 
   @override
   void initState() {
     super.initState();
     mainNavbarCubit = getItInstance<MainNavbarCubit>();
+    fetchPokemonsCubit = getItInstance<FetchPokemonsCubit>();
   }
-
-
 
   @override
   void dispose() {
@@ -36,7 +37,10 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [BlocProvider.value(value: mainNavbarCubit)],
+        providers: [
+          BlocProvider.value(value: mainNavbarCubit),
+          BlocProvider.value(value: fetchPokemonsCubit)
+        ],
         child: BlocBuilder<MainNavbarCubit, MainNavbarState>(
           builder: (context, state) {
             return Scaffold(
