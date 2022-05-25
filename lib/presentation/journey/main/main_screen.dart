@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon/data/network/pokemon_remote_source.dart';
 import 'package:pokemon/di/injectable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon/presentation/bloc/main_navbar/main_navbar_cubit.dart';
@@ -21,6 +22,14 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     super.initState();
     mainNavbarCubit = getItInstance<MainNavbarCubit>();
+
+    fetchResult();
+  }
+
+  fetchResult() {
+    getItInstance<PokemonRemoteSource>().getPokemons().then((value) {
+      debugPrint('Pokemons $value');
+    });
   }
 
   @override
@@ -33,18 +42,18 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [BlocProvider.value(value: mainNavbarCubit)],
-        child: BlocBuilder<MainNavbarCubit,MainNavbarState>(
+        child: BlocBuilder<MainNavbarCubit, MainNavbarState>(
           builder: (context, state) {
             return Scaffold(
-              appBar: AppBar(title: const Text('Pokemon'),),
-              body: currentScreen(state.index),
-              bottomNavigationBar: MainBottomNavigationBar(
-                 selectedIndex: state.index,
+                appBar: AppBar(
+                  title: const Text('Pokemon'),
+                ),
+                body: currentScreen(state.index),
+                bottomNavigationBar: MainBottomNavigationBar(
+                    selectedIndex: state.index,
                     onSelectedIndexChange: (index) {
                       context.read<MainNavbarCubit>().selectPage(index);
                     }));
-            
-            
           },
         ));
   }
@@ -56,7 +65,7 @@ class _MainScreenState extends State<MainScreen> {
       case 1:
         return const FavoriteScreen();
       default:
-      return const HomeScreen();
+        return const HomeScreen();
     }
   }
 }
