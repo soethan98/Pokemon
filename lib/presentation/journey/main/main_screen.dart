@@ -6,6 +6,7 @@ import 'package:pokemon/presentation/bloc/main_navbar/main_navbar_cubit.dart';
 import 'package:pokemon/presentation/journey/favorite/favorite_screen.dart';
 import 'package:pokemon/presentation/journey/main/main_bottom_navigation.dart';
 
+import '../../../domain/repositories/pokemon_repository.dart';
 import '../home/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -22,15 +23,9 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     super.initState();
     mainNavbarCubit = getItInstance<MainNavbarCubit>();
-
-    fetchResult();
   }
 
-  fetchResult() {
-    getItInstance<PokemonRemoteSource>().getPokemons().then((value) {
-      debugPrint('Pokemons $value');
-    });
-  }
+
 
   @override
   void dispose() {
