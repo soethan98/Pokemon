@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:pokemon/data/network/pokemon_remote_source.dart';
 import 'package:pokemon/di/injectable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokemon/presentation/bloc/cubit/fetch_pokemons_cubit.dart';
 import 'package:pokemon/presentation/bloc/main_navbar/main_navbar_cubit.dart';
 import 'package:pokemon/presentation/journey/favorite/favorite_screen.dart';
 import 'package:pokemon/presentation/journey/main/main_bottom_navigation.dart';
 
 import '../../../domain/repositories/pokemon_repository.dart';
+import '../../bloc/fetch_pokemons/fetch_pokemons_cubit.dart';
 import '../home/home_screen.dart';
 
 class MainScreen extends StatefulWidget {

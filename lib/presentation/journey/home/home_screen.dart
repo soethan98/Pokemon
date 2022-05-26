@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokemon/presentation/bloc/cubit/fetch_pokemons_cubit.dart';
 import 'package:pokemon/presentation/common/widgets/error_launcher.dart';
 import 'package:pokemon/presentation/common/widgets/pokemon_item_card.dart';
 import 'package:pokemon/presentation/models/pokemon_list_ui.dart';
+import 'package:pokemon/presentation/utils/route_constants.dart';
 
+import '../../bloc/fetch_pokemons/fetch_pokemons_cubit.dart';
 import '../../utils/size_constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -40,7 +41,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisSpacing: Sizes.dimen_8,
                   crossAxisSpacing: Sizes.dimen_8,
                   children: result
-                      .map((e) => PokemonItemCard(pokemonListUi: e))
+                      .map((e) => PokemonItemCard(
+                            pokemonListUi: e,
+                            onItemClick: () {
+                              Navigator.pushNamed(context, RouteList.detail,
+                                  arguments: e.number);
+                            },
+                          ))
                       .toList(),
                 ),
               );

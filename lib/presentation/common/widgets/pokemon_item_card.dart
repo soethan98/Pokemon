@@ -5,30 +5,36 @@ import 'package:pokemon/presentation/utils/size_constants.dart';
 
 class PokemonItemCard extends StatelessWidget {
   final PokemonListUi pokemonListUi;
-  const PokemonItemCard({Key? key, required this.pokemonListUi})
+  final VoidCallback onItemClick;
+
+  const PokemonItemCard(
+      {Key? key, required this.pokemonListUi, required this.onItemClick})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(Sizes.dimen_12))),
-      elevation: 0,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CachedNetworkImage(
-            imageUrl: pokemonListUi.imageUrl,
-            progressIndicatorBuilder: (ctx, url, progress) => const Center(
-              child: CircularProgressIndicator(),
+    return GestureDetector(
+      onTap: onItemClick,
+      child: Card(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(Sizes.dimen_12))),
+        elevation: 0,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CachedNetworkImage(
+              imageUrl: pokemonListUi.imageUrl,
+              progressIndicatorBuilder: (ctx, url, progress) => const Center(
+                child: CircularProgressIndicator(),
+              ),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
-          ),
-          Text(
-            pokemonListUi.name,
-            style: Theme.of(context).textTheme.headline6,
-          )
-        ],
+            Text(
+              pokemonListUi.name,
+              style: Theme.of(context).textTheme.headline6,
+            )
+          ],
+        ),
       ),
     );
   }

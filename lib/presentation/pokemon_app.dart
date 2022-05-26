@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:pokemon/main.dart';
-import 'package:pokemon/presentation/journey/main/main_screen.dart';
+
+import 'package:pokemon/presentation/fade_page_route_builder.dart';
+import 'package:pokemon/presentation/routes.dart';
+import 'package:pokemon/presentation/utils/route_constants.dart';
 
 class PokemonApp extends StatefulWidget {
   const PokemonApp({Key? key}) : super(key: key);
@@ -14,9 +14,17 @@ class PokemonApp extends StatefulWidget {
 class _PokemonAppState extends State<PokemonApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  MainScreen(),
+      initialRoute: RouteList.initial,
+      onGenerateRoute: (RouteSettings settings) {
+        final routes = Routes.getRoutes(settings);
+        final WidgetBuilder? builder = routes[settings.name];
+        return FadePageRouteBuilder(
+          builder: builder!,
+          settings: settings,
+        );
+      },
     );
   }
 }
