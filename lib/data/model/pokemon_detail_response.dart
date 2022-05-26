@@ -9,7 +9,7 @@ part 'pokemon_detail_response.freezed.dart';
 part 'pokemon_detail_response.g.dart';
 
 @freezed
-abstract class PokemonDetailResponse with _$PokemonDetailResponse {
+ class PokemonDetailResponse with _$PokemonDetailResponse {
   const factory PokemonDetailResponse({
     @Default([]) List<AbilityElement> abilities,
     @Default(0) int height,
@@ -25,7 +25,7 @@ abstract class PokemonDetailResponse with _$PokemonDetailResponse {
 }
 
 @freezed
-abstract class AbilityElement with _$AbilityElement {
+ class AbilityElement with _$AbilityElement {
   const factory AbilityElement({
     StatClass? ability,
     bool? isHidden,
@@ -36,7 +36,7 @@ abstract class AbilityElement with _$AbilityElement {
 }
 
 @freezed
-abstract class StatClass with _$StatClass {
+ class StatClass with _$StatClass {
   const factory StatClass({
     String? name,
   }) = _StatClass;
@@ -46,8 +46,9 @@ abstract class StatClass with _$StatClass {
 }
 
 @freezed
-abstract class Stat with _$Stat {
+ class Stat with _$Stat {
   const factory Stat({
+    @JsonKey(name: 'base_stat')
     int? baseStat,
     int? effort,
     StatClass? stat,
@@ -57,7 +58,7 @@ abstract class Stat with _$Stat {
 }
 
 @freezed
-abstract class Type with _$Type {
+ class Type with _$Type {
   const factory Type({
     StatClass? type,
   }) = _Type;

@@ -16,12 +16,13 @@ class DetailUiMapper {
         height: entity.height,
         weight: entity.weight,
         bgColor: getBackgroundColor(entity.types.first.type),
-        imageUrl: 'https://cdn.traction.one/pokedex/pokemon/${entity.id}.png');
+        imageUrl: 'https://cdn.traction.one/pokedex/pokemon/${entity.id}.png',
+        stats: mapStat(entity.stats));
   }
 
-  // List<UiAbility> mapAbilities(List<AbilityEntity> entities) => entities
-  //     .map((e) => UiAbility(name: e.name, isHidden: e.isHidden))
-  //     .toList();
+  List<UiStatDetail> mapStat(List<StatEntity> entities) => entities
+      .map((e) => UiStatDetail(name: e.name, baseState: e.baseStat))
+      .toList();
 
   // List<String> mapType(List<TypeEntity> entities) =>
   //     entities.map((e) => e.type).toList();

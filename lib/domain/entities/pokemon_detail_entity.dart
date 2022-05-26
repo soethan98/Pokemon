@@ -5,6 +5,7 @@ class PokemonDetailEntity {
   final String name;
   final List<AbilityEntity> abilities;
   final List<TypeEntity> types;
+  final List<StatEntity> stats;
 
   PokemonDetailEntity(
       {required this.weight,
@@ -12,7 +13,8 @@ class PokemonDetailEntity {
       required this.id,
       required this.name,
       required this.abilities,
-      required this.types});
+      required this.types,
+      required this.stats});
 }
 
 class AbilityEntity {
@@ -29,9 +31,7 @@ class TypeEntity {
 
 class StatEntity {
   final int baseStat;
-  final int effort;
   final String name;
 
-  StatEntity(
-      {required this.baseStat, required this.effort, required this.name});
+  StatEntity({required this.baseStat, required this.name});
 }

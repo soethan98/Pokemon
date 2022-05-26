@@ -63,7 +63,7 @@ Map<String, dynamic> _$$_StatClassToJson(_$_StatClass instance) =>
     };
 
 _$_Stat _$$_StatFromJson(Map<String, dynamic> json) => _$_Stat(
-      baseStat: json['baseStat'] as int?,
+      baseStat: json['base_stat'] as int?,
       effort: json['effort'] as int?,
       stat: json['stat'] == null
           ? null
@@ -71,7 +71,7 @@ _$_Stat _$$_StatFromJson(Map<String, dynamic> json) => _$_Stat(
     );
 
 Map<String, dynamic> _$$_StatToJson(_$_Stat instance) => <String, dynamic>{
-      'baseStat': instance.baseStat,
+      'base_stat': instance.baseStat,
       'effort': instance.effort,
       'stat': instance.stat,
     };

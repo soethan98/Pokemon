@@ -648,7 +648,10 @@ Stat _$StatFromJson(Map<String, dynamic> json) {
 class _$StatTearOff {
   const _$StatTearOff();
 
-  _Stat call({int? baseStat, int? effort, StatClass? stat}) {
+  _Stat call(
+      {@JsonKey(name: 'base_stat') int? baseStat,
+      int? effort,
+      StatClass? stat}) {
     return _Stat(
       baseStat: baseStat,
       effort: effort,
@@ -666,6 +669,7 @@ const $Stat = _$StatTearOff();
 
 /// @nodoc
 mixin _$Stat {
+  @JsonKey(name: 'base_stat')
   int? get baseStat => throw _privateConstructorUsedError;
   int? get effort => throw _privateConstructorUsedError;
   StatClass? get stat => throw _privateConstructorUsedError;
@@ -679,7 +683,10 @@ mixin _$Stat {
 abstract class $StatCopyWith<$Res> {
   factory $StatCopyWith(Stat value, $Res Function(Stat) then) =
       _$StatCopyWithImpl<$Res>;
-  $Res call({int? baseStat, int? effort, StatClass? stat});
+  $Res call(
+      {@JsonKey(name: 'base_stat') int? baseStat,
+      int? effort,
+      StatClass? stat});
 
   $StatClassCopyWith<$Res>? get stat;
 }
@@ -731,7 +738,10 @@ abstract class _$StatCopyWith<$Res> implements $StatCopyWith<$Res> {
   factory _$StatCopyWith(_Stat value, $Res Function(_Stat) then) =
       __$StatCopyWithImpl<$Res>;
   @override
-  $Res call({int? baseStat, int? effort, StatClass? stat});
+  $Res call(
+      {@JsonKey(name: 'base_stat') int? baseStat,
+      int? effort,
+      StatClass? stat});
 
   @override
   $StatClassCopyWith<$Res>? get stat;
@@ -772,11 +782,13 @@ class __$StatCopyWithImpl<$Res> extends _$StatCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Stat implements _Stat {
-  const _$_Stat({this.baseStat, this.effort, this.stat});
+  const _$_Stat(
+      {@JsonKey(name: 'base_stat') this.baseStat, this.effort, this.stat});
 
   factory _$_Stat.fromJson(Map<String, dynamic> json) => _$$_StatFromJson(json);
 
   @override
+  @JsonKey(name: 'base_stat')
   final int? baseStat;
   @override
   final int? effort;
@@ -817,11 +829,15 @@ class _$_Stat implements _Stat {
 }
 
 abstract class _Stat implements Stat {
-  const factory _Stat({int? baseStat, int? effort, StatClass? stat}) = _$_Stat;
+  const factory _Stat(
+      {@JsonKey(name: 'base_stat') int? baseStat,
+      int? effort,
+      StatClass? stat}) = _$_Stat;
 
   factory _Stat.fromJson(Map<String, dynamic> json) = _$_Stat.fromJson;
 
   @override
+  @JsonKey(name: 'base_stat')
   int? get baseStat;
   @override
   int? get effort;

@@ -11,7 +11,8 @@ class PokemonDetailMapper {
         id: response.id,
         name: response.name,
         abilities: mapAbilities(response.abilities),
-        types: mapType(response.types));
+        types: mapType(response.types),
+        stats: mapStats(response.stats));
   }
 
   List<TypeEntity> mapType(List<Type> types) {
@@ -21,6 +22,13 @@ class PokemonDetailMapper {
   List<AbilityEntity> mapAbilities(List<AbilityElement> abilities) {
     return abilities
         .map((e) => AbilityEntity(name: e.ability?.name ?? ""))
+        .toList();
+  }
+
+  List<StatEntity> mapStats(List<Stat> stats) {
+    return stats
+        .map((e) =>
+            StatEntity(baseStat: e.baseStat ?? 0, name: e.stat?.name ?? ""))
         .toList();
   }
 }

@@ -9,6 +9,7 @@ class UiPokemonDetail {
   final String types;
   final Color bgColor;
   final String abilities;
+  final List<UiStatDetail> stats;
 
   UiPokemonDetail(
       {required this.id,
@@ -18,5 +19,13 @@ class UiPokemonDetail {
       required this.imageUrl,
       required this.types,
       required this.abilities,
-      required this.bgColor});
+      required this.bgColor,
+      required this.stats});
+}
+
+class UiStatDetail {
+  final int baseState;
+  final String name;
+
+  UiStatDetail({required this.baseState, required this.name});
 }
