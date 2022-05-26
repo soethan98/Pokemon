@@ -1,7 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon/presentation/models/pokemon_detail_ui.dart';
+import 'package:pokemon/presentation/utils/size_constants.dart';
 import 'package:pokemon/shared/extension/string_extension.dart';
+
+import '../../bloc/toggle_favorite/toggle_favorite_cubit.dart';
 
 class DetailBackdropWidget extends StatelessWidget {
   final UiPokemonDetail data;
@@ -21,12 +25,37 @@ class DetailBackdropWidget extends StatelessWidget {
               height: double.infinity,
               color: data.bgColor,
               child: Padding(
-                padding: const EdgeInsets.only(top: 90.0, left: 16),
+                padding: const EdgeInsets.only(
+                    top: kToolbarHeight / 1.5, left: 16, right: 16),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Align(
+                      alignment: Alignment.topRight,
+                      child:
+                          BlocBuilder<ToggleFavoriteCubit, ToggleFavoriteState>(
+                        builder: (context, state) {
+                          return state.maybeWhen(orElse: () {
+                            return const Icon(Icons.favorite_border);
+                          }, isFavoriteMovie: (isFav) {
+                            return GestureDetector(
+                              onTap: () {
+                                context
+                                    .read<ToggleFavoriteCubit>()
+                                    .toggleFavorite(data, !isFav);
+                              },
+                              child: Icon(
+                                isFav ? Icons.favorite : Icons.favorite_border,
+                                size: Sizes.dimen_32,
+                                color: Colors.white,
+                              ),
+                            );
+                          });
+                        },
+                      ),
+                    ),
                     Text(
                       data.name.capitalize(),
                       style: Theme.of(context)

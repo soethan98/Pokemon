@@ -20,7 +20,22 @@ class UiPokemonDetail {
       required this.types,
       required this.abilities,
       required this.bgColor,
-      required this.stats});
+      required this.stats,
+     });
+
+  // copyWith({bool? isFav}) {
+  //   return UiPokemonDetail(
+  //       id: id,
+  //       name: name,
+  //       height: height,
+  //       weight: weight,
+  //       imageUrl: imageUrl,
+  //       types: types,
+  //       abilities: abilities,
+  //       bgColor: bgColor,
+  //       stats: stats,
+  //       isFav: isFav ?? this.isFav);
+  // }
 }
 
 class UiStatDetail {

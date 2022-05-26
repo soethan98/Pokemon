@@ -7,7 +7,6 @@ import 'package:pokemon/presentation/utils/color_constants.dart';
 @lazySingleton
 class DetailUiMapper {
   UiPokemonDetail mapItem(PokemonDetailEntity entity) {
-    debugPrint('Mapper ${entity.types.first.type}');
     return UiPokemonDetail(
         abilities: entity.abilities.map((e) => e.name).toList().join(','),
         types: entity.types.map((e) => e.type).toList().join(','),
@@ -17,7 +16,8 @@ class DetailUiMapper {
         weight: entity.weight,
         bgColor: getBackgroundColor(entity.types.first.type),
         imageUrl: 'https://cdn.traction.one/pokedex/pokemon/${entity.id}.png',
-        stats: mapStat(entity.stats));
+        stats: mapStat(entity.stats),
+        );
   }
 
   List<UiStatDetail> mapStat(List<StatEntity> entities) => entities
