@@ -8,7 +8,7 @@ class UiPokemonDetail {
   final String imageUrl;
   final String types;
   final Color bgColor;
-  final List<UiAbility> abilities;
+  final String abilities;
 
   UiPokemonDetail(
       {required this.id,
@@ -19,11 +19,4 @@ class UiPokemonDetail {
       required this.types,
       required this.abilities,
       required this.bgColor});
-}
-
-class UiAbility {
-  final String name;
-  final bool isHidden;
-
-  UiAbility({required this.name, required this.isHidden});
 }

@@ -17,9 +17,8 @@ class PokemonDetailEntity {
 
 class AbilityEntity {
   final String name;
-  final bool isHidden;
 
-  AbilityEntity({required this.name, required this.isHidden});
+  AbilityEntity({required this.name});
 }
 
 class TypeEntity {

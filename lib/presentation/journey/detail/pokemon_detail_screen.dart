@@ -5,6 +5,7 @@ import 'package:pokemon/di/injectable.dart';
 import 'package:pokemon/presentation/bloc/cubit/fetch_detail_cubit.dart';
 import 'package:pokemon/presentation/common/widgets/error_launcher.dart';
 import 'package:pokemon/presentation/journey/detail/detail_backdrop_widget.dart';
+import 'package:pokemon/presentation/journey/detail/pokemon_about.dart';
 
 class PokemonDetailScreen extends StatefulWidget {
   final int pokemonId;
@@ -62,13 +63,13 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen> {
                             data: data,
                           ),
                         ),
-                        // FractionallySizedBox(
-                        //   heightFactor: 0.6,
-                        //   alignment: Alignment.bottomCenter,
-                        //   child: Container(
-                        //     color: Colors.orange,
-                        //   ),
-                        // ),
+                        FractionallySizedBox(
+                          heightFactor: 0.6,
+                          alignment: Alignment.bottomCenter,
+                          child: PokemonAbout(
+                            data: data,
+                          ),
+                        ),
                       ],
                     );
                   });
