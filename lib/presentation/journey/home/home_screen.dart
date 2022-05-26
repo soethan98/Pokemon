@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon/presentation/common/widgets/error_launcher.dart';
 import 'package:pokemon/presentation/common/widgets/pokemon_item_card.dart';
+import 'package:pokemon/presentation/common/widgets/pokemon_list_builder.dart';
 import 'package:pokemon/presentation/models/pokemon_list_ui.dart';
 import 'package:pokemon/presentation/utils/route_constants.dart';
 
@@ -34,22 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return state.maybeWhen(
             error: (errMsg) => ErrorLauncher(error: errMsg),
             data: (result) {
-              return Padding(
-                padding: const EdgeInsets.all(15),
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: Sizes.dimen_8,
-                  crossAxisSpacing: Sizes.dimen_8,
-                  children: result
-                      .map((e) => PokemonItemCard(
-                            pokemonListUi: e,
-                            onItemClick: () {
-                              Navigator.pushNamed(context, RouteList.detail,
-                                  arguments: e.number);
-                            },
-                          ))
-                      .toList(),
-                ),
+              return PokemonListBuilder(
+                result: result,
               );
             },
             orElse: () => const SizedBox.shrink(),

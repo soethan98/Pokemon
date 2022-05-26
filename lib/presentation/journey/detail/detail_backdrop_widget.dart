@@ -5,7 +5,7 @@ import 'package:pokemon/presentation/models/pokemon_detail_ui.dart';
 import 'package:pokemon/presentation/utils/size_constants.dart';
 import 'package:pokemon/shared/extension/string_extension.dart';
 
-import '../../bloc/toggle_favorite/toggle_favorite_cubit.dart';
+import '../../bloc/toggle_favorite/favorite_cubit.dart';
 
 class DetailBackdropWidget extends StatelessWidget {
   final UiPokemonDetail data;
@@ -35,7 +35,7 @@ class DetailBackdropWidget extends StatelessWidget {
                     Align(
                       alignment: Alignment.topRight,
                       child:
-                          BlocBuilder<ToggleFavoriteCubit, ToggleFavoriteState>(
+                          BlocBuilder<FavoriteCubit, FavoriteState>(
                         builder: (context, state) {
                           return state.maybeWhen(orElse: () {
                             return const Icon(Icons.favorite_border);
@@ -43,7 +43,7 @@ class DetailBackdropWidget extends StatelessWidget {
                             return GestureDetector(
                               onTap: () {
                                 context
-                                    .read<ToggleFavoriteCubit>()
+                                    .read<FavoriteCubit>()
                                     .toggleFavorite(data, !isFav);
                               },
                               child: Icon(

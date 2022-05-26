@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon/di/injectable.dart';
-import 'package:pokemon/presentation/bloc/toggle_favorite/toggle_favorite_cubit.dart';
+import 'package:pokemon/presentation/bloc/toggle_favorite/favorite_cubit.dart';
 import 'package:pokemon/presentation/common/widgets/error_launcher.dart';
-import 'package:pokemon/presentation/journey/detail/detail_appbar.dart';
 import 'package:pokemon/presentation/journey/detail/detail_backdrop_widget.dart';
 import 'package:pokemon/presentation/journey/detail/pokemon_about.dart';
 
@@ -21,7 +20,7 @@ class PokemonDetailScreen extends StatefulWidget {
 
 class _PokemonDetailScreenState extends State<PokemonDetailScreen> {
   late FetchDetailCubit detailCubit;
-  late ToggleFavoriteCubit favoriteCubit;
+  late  FavoriteCubit favoriteCubit;
 
   @override
   void initState() {

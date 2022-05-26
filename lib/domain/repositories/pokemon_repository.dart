@@ -6,6 +6,7 @@ import 'package:pokemon/presentation/common/widgets/pokemon_item_card.dart';
 
 abstract class PokemonRepository {
   Future<Either<AppError, List<PokemonItemEntity>>> getPokemons();
+  Future<Either<AppError, List<PokemonItemEntity>>> getFavoritePokemons();
   Future<Either<AppError, PokemonDetailEntity>> getPokemon(int id);
   Future<Either<AppError, void>> savePokemon(PokemonDetailEntity entity);
   Future<Either<AppError, void>> deleteFavPokemon(int id);

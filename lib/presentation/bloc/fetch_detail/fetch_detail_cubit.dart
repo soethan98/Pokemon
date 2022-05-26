@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pokemon/domain/usecases/favoritePokemon/check_if_pokemon_favorite.dart';
-import 'package:pokemon/presentation/bloc/toggle_favorite/toggle_favorite_cubit.dart';
+import 'package:pokemon/presentation/bloc/toggle_favorite/favorite_cubit.dart';
 import 'package:pokemon/presentation/mapper/detail_ui_mapper.dart';
 
 import '../../../domain/usecases/fetchPokemon/fetch_pokemon.dart';
@@ -15,7 +15,7 @@ part 'fetch_detail_cubit.freezed.dart';
 class FetchDetailCubit extends Cubit<FetchDetailState> {
   final DetailUiMapper uiMapper;
   final FetchPokemon fetchPokemon;
-  final ToggleFavoriteCubit favCubit;
+  final FavoriteCubit favCubit;
   FetchDetailCubit(
       {required this.fetchPokemon,
       required this.favCubit,

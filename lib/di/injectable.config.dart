@@ -20,16 +20,16 @@ import '../domain/usecases/favoritePokemon/check_if_pokemon_favorite.dart'
 import '../domain/usecases/favoritePokemon/delete_favorite_pokemon.dart'
     as _i16;
 import '../domain/usecases/favoritePokemon/favorite_pokemon.dart' as _i14;
+import '../domain/usecases/favoritePokemon/get_favorite_pokemons.dart' as _i20;
 import '../domain/usecases/fetchAll/fetch_all_pokemon.dart' as _i17;
 import '../domain/usecases/fetchPokemon/fetch_pokemon.dart' as _i18;
-import '../presentation/bloc/fetch_detail/fetch_detail_cubit.dart' as _i21;
+import '../presentation/bloc/fetch_detail/fetch_detail_cubit.dart' as _i22;
 import '../presentation/bloc/fetch_pokemons/fetch_pokemons_cubit.dart' as _i19;
 import '../presentation/bloc/main_navbar/main_navbar_cubit.dart' as _i5;
-import '../presentation/bloc/toggle_favorite/toggle_favorite_cubit.dart'
-    as _i20;
+import '../presentation/bloc/toggle_favorite/favorite_cubit.dart' as _i21;
 import '../presentation/mapper/detail_ui_mapper.dart' as _i4;
 import '../presentation/mapper/pokemon_ui_mapper.dart' as _i9;
-import 'injectable_module.dart' as _i22; // ignore_for_file: unnecessary_lambdas
+import 'injectable_module.dart' as _i23; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -66,15 +66,19 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i19.FetchPokemonsCubit>(() => _i19.FetchPokemonsCubit(
       fetchAllPokemon: get<_i17.FetchAllPokemon>(),
       uiMapper: get<_i9.PokemonUiMapper>()));
-  gh.factory<_i20.ToggleFavoriteCubit>(() => _i20.ToggleFavoriteCubit(
+  gh.lazySingleton<_i20.GetFavoritePokemons>(() =>
+      _i20.GetFavoritePokemons(repository: get<_i12.PokemonRepository>()));
+  gh.factory<_i21.FavoriteCubit>(() => _i21.FavoriteCubit(
       addFavorite: get<_i14.AddFavorite>(),
       deleteFavorite: get<_i16.DeleteFavoritePokemon>(),
-      checkIfPokemonFav: get<_i15.CheckIfPokemonFav>()));
-  gh.factory<_i21.FetchDetailCubit>(() => _i21.FetchDetailCubit(
+      checkIfPokemonFav: get<_i15.CheckIfPokemonFav>(),
+      uiMapper: get<_i9.PokemonUiMapper>(),
+      getFavoritePokemons: get<_i20.GetFavoritePokemons>()));
+  gh.factory<_i22.FetchDetailCubit>(() => _i22.FetchDetailCubit(
       fetchPokemon: get<_i18.FetchPokemon>(),
-      favCubit: get<_i20.ToggleFavoriteCubit>(),
+      favCubit: get<_i21.FavoriteCubit>(),
       uiMapper: get<_i4.DetailUiMapper>()));
   return get;
 }
 
-class _$InjectableModule extends _i22.InjectableModule {}
+class _$InjectableModule extends _i23.InjectableModule {}

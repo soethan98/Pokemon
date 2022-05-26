@@ -27,7 +27,7 @@ class PokemonRepoImpl implements PokemonRepository {
   Future<Either<AppError, List<PokemonItemEntity>>> getPokemons() async {
     try {
       final result = await pokemonRemoteSource.getPokemons();
-      return Right(pokemonEntityMapper.fromList(result));
+      return Right(pokemonEntityMapper.fromRemoteList(result));
     } on AppException catch (e) {
       return Left(AppError(AppErrorType.api, e.toString()));
     }
@@ -69,6 +69,17 @@ class PokemonRepoImpl implements PokemonRepository {
     try {
       final result = await pokemonCacheSource.removePokemon(id);
       return Right(result);
+    } on Exception catch (e) {
+      return Left(AppError(AppErrorType.database, e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<AppError, List<PokemonItemEntity>>>
+      getFavoritePokemons() async {
+    try {
+      final result = await pokemonCacheSource.getPokemons();
+      return Right(pokemonEntityMapper.fromLocalList(result));
     } on Exception catch (e) {
       return Left(AppError(AppErrorType.database, e.toString()));
     }

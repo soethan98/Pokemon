@@ -8,6 +8,7 @@ import 'package:pokemon/presentation/journey/main/main_bottom_navigation.dart';
 
 import '../../../domain/repositories/pokemon_repository.dart';
 import '../../bloc/fetch_pokemons/fetch_pokemons_cubit.dart';
+import '../../bloc/toggle_favorite/favorite_cubit.dart';
 import '../home/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -20,17 +21,21 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   late MainNavbarCubit mainNavbarCubit;
   late FetchPokemonsCubit fetchPokemonsCubit;
+  late FavoriteCubit favoriteCubit;
 
   @override
   void initState() {
     super.initState();
     mainNavbarCubit = getItInstance<MainNavbarCubit>();
     fetchPokemonsCubit = getItInstance<FetchPokemonsCubit>();
+    //favoriteCubit = getItInstance<FavoriteCubit>();
   }
 
   @override
   void dispose() {
     mainNavbarCubit.close();
+    fetchPokemonsCubit.close();
+    //favoriteCubit.close();
     super.dispose();
   }
 
@@ -39,7 +44,8 @@ class _MainScreenState extends State<MainScreen> {
     return MultiBlocProvider(
         providers: [
           BlocProvider.value(value: mainNavbarCubit),
-          BlocProvider.value(value: fetchPokemonsCubit)
+          BlocProvider.value(value: fetchPokemonsCubit),
+          //BlocProvider.value(value: favoriteCubit)
         ],
         child: BlocBuilder<MainNavbarCubit, MainNavbarState>(
           builder: (context, state) {
