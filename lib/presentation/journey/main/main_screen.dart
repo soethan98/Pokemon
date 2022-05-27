@@ -28,14 +28,12 @@ class _MainScreenState extends State<MainScreen> {
     super.initState();
     mainNavbarCubit = getItInstance<MainNavbarCubit>();
     fetchPokemonsCubit = getItInstance<FetchPokemonsCubit>();
-    //favoriteCubit = getItInstance<FavoriteCubit>();
   }
 
   @override
   void dispose() {
     mainNavbarCubit.close();
     fetchPokemonsCubit.close();
-    //favoriteCubit.close();
     super.dispose();
   }
 
@@ -45,7 +43,6 @@ class _MainScreenState extends State<MainScreen> {
         providers: [
           BlocProvider.value(value: mainNavbarCubit),
           BlocProvider.value(value: fetchPokemonsCubit),
-          //BlocProvider.value(value: favoriteCubit)
         ],
         child: BlocBuilder<MainNavbarCubit, MainNavbarState>(
           builder: (context, state) {

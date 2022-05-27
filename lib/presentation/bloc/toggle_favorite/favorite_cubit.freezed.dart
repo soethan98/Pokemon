@@ -18,24 +18,24 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$FavoriteStateTearOff {
   const _$FavoriteStateTearOff();
 
-  _Initial initial() {
-    return const _Initial();
+  FavInitial initial() {
+    return const FavInitial();
   }
 
-  _IsFavoriteMovie isFavoriteMovie(bool isFav) {
-    return _IsFavoriteMovie(
+  IsFavoriteMovie isFavoriteMovie(bool isFav) {
+    return IsFavoriteMovie(
       isFav,
     );
   }
 
-  _Error error(String errMsg) {
-    return _Error(
+  FavError error(String errMsg) {
+    return FavError(
       errMsg,
     );
   }
 
-  _FavListLoaded favListLoaded(List<PokemonListUi> data) {
-    return _FavListLoaded(
+  FavListLoaded favListLoaded(List<PokemonListUi> data) {
+    return FavListLoaded(
       data,
     );
   }
@@ -73,26 +73,26 @@ mixin _$FavoriteState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_IsFavoriteMovie value) isFavoriteMovie,
-    required TResult Function(_Error value) error,
-    required TResult Function(_FavListLoaded value) favListLoaded,
+    required TResult Function(FavInitial value) initial,
+    required TResult Function(IsFavoriteMovie value) isFavoriteMovie,
+    required TResult Function(FavError value) error,
+    required TResult Function(FavListLoaded value) favListLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,25 +116,26 @@ class _$FavoriteStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class $FavInitialCopyWith<$Res> {
+  factory $FavInitialCopyWith(
+          FavInitial value, $Res Function(FavInitial) then) =
+      _$FavInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class _$FavInitialCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
+    implements $FavInitialCopyWith<$Res> {
+  _$FavInitialCopyWithImpl(FavInitial _value, $Res Function(FavInitial) _then)
+      : super(_value, (v) => _then(v as FavInitial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  FavInitial get _value => super._value as FavInitial;
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$FavInitial implements FavInitial {
+  const _$FavInitial();
 
   @override
   String toString() {
@@ -144,7 +145,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is FavInitial);
   }
 
   @override
@@ -190,10 +191,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_IsFavoriteMovie value) isFavoriteMovie,
-    required TResult Function(_Error value) error,
-    required TResult Function(_FavListLoaded value) favListLoaded,
+    required TResult Function(FavInitial value) initial,
+    required TResult Function(IsFavoriteMovie value) isFavoriteMovie,
+    required TResult Function(FavError value) error,
+    required TResult Function(FavListLoaded value) favListLoaded,
   }) {
     return initial(this);
   }
@@ -201,10 +202,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
   }) {
     return initial?.call(this);
   }
@@ -212,10 +213,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -225,34 +226,34 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements FavoriteState {
-  const factory _Initial() = _$_Initial;
+abstract class FavInitial implements FavoriteState {
+  const factory FavInitial() = _$FavInitial;
 }
 
 /// @nodoc
-abstract class _$IsFavoriteMovieCopyWith<$Res> {
-  factory _$IsFavoriteMovieCopyWith(
-          _IsFavoriteMovie value, $Res Function(_IsFavoriteMovie) then) =
-      __$IsFavoriteMovieCopyWithImpl<$Res>;
+abstract class $IsFavoriteMovieCopyWith<$Res> {
+  factory $IsFavoriteMovieCopyWith(
+          IsFavoriteMovie value, $Res Function(IsFavoriteMovie) then) =
+      _$IsFavoriteMovieCopyWithImpl<$Res>;
   $Res call({bool isFav});
 }
 
 /// @nodoc
-class __$IsFavoriteMovieCopyWithImpl<$Res>
+class _$IsFavoriteMovieCopyWithImpl<$Res>
     extends _$FavoriteStateCopyWithImpl<$Res>
-    implements _$IsFavoriteMovieCopyWith<$Res> {
-  __$IsFavoriteMovieCopyWithImpl(
-      _IsFavoriteMovie _value, $Res Function(_IsFavoriteMovie) _then)
-      : super(_value, (v) => _then(v as _IsFavoriteMovie));
+    implements $IsFavoriteMovieCopyWith<$Res> {
+  _$IsFavoriteMovieCopyWithImpl(
+      IsFavoriteMovie _value, $Res Function(IsFavoriteMovie) _then)
+      : super(_value, (v) => _then(v as IsFavoriteMovie));
 
   @override
-  _IsFavoriteMovie get _value => super._value as _IsFavoriteMovie;
+  IsFavoriteMovie get _value => super._value as IsFavoriteMovie;
 
   @override
   $Res call({
     Object? isFav = freezed,
   }) {
-    return _then(_IsFavoriteMovie(
+    return _then(IsFavoriteMovie(
       isFav == freezed
           ? _value.isFav
           : isFav // ignore: cast_nullable_to_non_nullable
@@ -263,8 +264,8 @@ class __$IsFavoriteMovieCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_IsFavoriteMovie implements _IsFavoriteMovie {
-  const _$_IsFavoriteMovie(this.isFav);
+class _$IsFavoriteMovie implements IsFavoriteMovie {
+  const _$IsFavoriteMovie(this.isFav);
 
   @override
   final bool isFav;
@@ -278,7 +279,7 @@ class _$_IsFavoriteMovie implements _IsFavoriteMovie {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IsFavoriteMovie &&
+            other is IsFavoriteMovie &&
             const DeepCollectionEquality().equals(other.isFav, isFav));
   }
 
@@ -288,8 +289,8 @@ class _$_IsFavoriteMovie implements _IsFavoriteMovie {
 
   @JsonKey(ignore: true)
   @override
-  _$IsFavoriteMovieCopyWith<_IsFavoriteMovie> get copyWith =>
-      __$IsFavoriteMovieCopyWithImpl<_IsFavoriteMovie>(this, _$identity);
+  $IsFavoriteMovieCopyWith<IsFavoriteMovie> get copyWith =>
+      _$IsFavoriteMovieCopyWithImpl<IsFavoriteMovie>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -331,10 +332,10 @@ class _$_IsFavoriteMovie implements _IsFavoriteMovie {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_IsFavoriteMovie value) isFavoriteMovie,
-    required TResult Function(_Error value) error,
-    required TResult Function(_FavListLoaded value) favListLoaded,
+    required TResult Function(FavInitial value) initial,
+    required TResult Function(IsFavoriteMovie value) isFavoriteMovie,
+    required TResult Function(FavError value) error,
+    required TResult Function(FavListLoaded value) favListLoaded,
   }) {
     return isFavoriteMovie(this);
   }
@@ -342,10 +343,10 @@ class _$_IsFavoriteMovie implements _IsFavoriteMovie {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
   }) {
     return isFavoriteMovie?.call(this);
   }
@@ -353,10 +354,10 @@ class _$_IsFavoriteMovie implements _IsFavoriteMovie {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
     required TResult orElse(),
   }) {
     if (isFavoriteMovie != null) {
@@ -366,36 +367,36 @@ class _$_IsFavoriteMovie implements _IsFavoriteMovie {
   }
 }
 
-abstract class _IsFavoriteMovie implements FavoriteState {
-  const factory _IsFavoriteMovie(bool isFav) = _$_IsFavoriteMovie;
+abstract class IsFavoriteMovie implements FavoriteState {
+  const factory IsFavoriteMovie(bool isFav) = _$IsFavoriteMovie;
 
   bool get isFav;
   @JsonKey(ignore: true)
-  _$IsFavoriteMovieCopyWith<_IsFavoriteMovie> get copyWith =>
+  $IsFavoriteMovieCopyWith<IsFavoriteMovie> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class $FavErrorCopyWith<$Res> {
+  factory $FavErrorCopyWith(FavError value, $Res Function(FavError) then) =
+      _$FavErrorCopyWithImpl<$Res>;
   $Res call({String errMsg});
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class _$FavErrorCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
+    implements $FavErrorCopyWith<$Res> {
+  _$FavErrorCopyWithImpl(FavError _value, $Res Function(FavError) _then)
+      : super(_value, (v) => _then(v as FavError));
 
   @override
-  _Error get _value => super._value as _Error;
+  FavError get _value => super._value as FavError;
 
   @override
   $Res call({
     Object? errMsg = freezed,
   }) {
-    return _then(_Error(
+    return _then(FavError(
       errMsg == freezed
           ? _value.errMsg
           : errMsg // ignore: cast_nullable_to_non_nullable
@@ -406,8 +407,8 @@ class __$ErrorCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error(this.errMsg);
+class _$FavError implements FavError {
+  const _$FavError(this.errMsg);
 
   @override
   final String errMsg;
@@ -421,7 +422,7 @@ class _$_Error implements _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Error &&
+            other is FavError &&
             const DeepCollectionEquality().equals(other.errMsg, errMsg));
   }
 
@@ -431,8 +432,8 @@ class _$_Error implements _Error {
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  $FavErrorCopyWith<FavError> get copyWith =>
+      _$FavErrorCopyWithImpl<FavError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -474,10 +475,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_IsFavoriteMovie value) isFavoriteMovie,
-    required TResult Function(_Error value) error,
-    required TResult Function(_FavListLoaded value) favListLoaded,
+    required TResult Function(FavInitial value) initial,
+    required TResult Function(IsFavoriteMovie value) isFavoriteMovie,
+    required TResult Function(FavError value) error,
+    required TResult Function(FavListLoaded value) favListLoaded,
   }) {
     return error(this);
   }
@@ -485,10 +486,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
   }) {
     return error?.call(this);
   }
@@ -496,10 +497,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -509,38 +510,39 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements FavoriteState {
-  const factory _Error(String errMsg) = _$_Error;
+abstract class FavError implements FavoriteState {
+  const factory FavError(String errMsg) = _$FavError;
 
   String get errMsg;
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  $FavErrorCopyWith<FavError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FavListLoadedCopyWith<$Res> {
-  factory _$FavListLoadedCopyWith(
-          _FavListLoaded value, $Res Function(_FavListLoaded) then) =
-      __$FavListLoadedCopyWithImpl<$Res>;
+abstract class $FavListLoadedCopyWith<$Res> {
+  factory $FavListLoadedCopyWith(
+          FavListLoaded value, $Res Function(FavListLoaded) then) =
+      _$FavListLoadedCopyWithImpl<$Res>;
   $Res call({List<PokemonListUi> data});
 }
 
 /// @nodoc
-class __$FavListLoadedCopyWithImpl<$Res>
+class _$FavListLoadedCopyWithImpl<$Res>
     extends _$FavoriteStateCopyWithImpl<$Res>
-    implements _$FavListLoadedCopyWith<$Res> {
-  __$FavListLoadedCopyWithImpl(
-      _FavListLoaded _value, $Res Function(_FavListLoaded) _then)
-      : super(_value, (v) => _then(v as _FavListLoaded));
+    implements $FavListLoadedCopyWith<$Res> {
+  _$FavListLoadedCopyWithImpl(
+      FavListLoaded _value, $Res Function(FavListLoaded) _then)
+      : super(_value, (v) => _then(v as FavListLoaded));
 
   @override
-  _FavListLoaded get _value => super._value as _FavListLoaded;
+  FavListLoaded get _value => super._value as FavListLoaded;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_FavListLoaded(
+    return _then(FavListLoaded(
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -551,8 +553,8 @@ class __$FavListLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FavListLoaded implements _FavListLoaded {
-  const _$_FavListLoaded(this.data);
+class _$FavListLoaded implements FavListLoaded {
+  const _$FavListLoaded(this.data);
 
   @override
   final List<PokemonListUi> data;
@@ -566,7 +568,7 @@ class _$_FavListLoaded implements _FavListLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FavListLoaded &&
+            other is FavListLoaded &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -576,8 +578,8 @@ class _$_FavListLoaded implements _FavListLoaded {
 
   @JsonKey(ignore: true)
   @override
-  _$FavListLoadedCopyWith<_FavListLoaded> get copyWith =>
-      __$FavListLoadedCopyWithImpl<_FavListLoaded>(this, _$identity);
+  $FavListLoadedCopyWith<FavListLoaded> get copyWith =>
+      _$FavListLoadedCopyWithImpl<FavListLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -619,10 +621,10 @@ class _$_FavListLoaded implements _FavListLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_IsFavoriteMovie value) isFavoriteMovie,
-    required TResult Function(_Error value) error,
-    required TResult Function(_FavListLoaded value) favListLoaded,
+    required TResult Function(FavInitial value) initial,
+    required TResult Function(IsFavoriteMovie value) isFavoriteMovie,
+    required TResult Function(FavError value) error,
+    required TResult Function(FavListLoaded value) favListLoaded,
   }) {
     return favListLoaded(this);
   }
@@ -630,10 +632,10 @@ class _$_FavListLoaded implements _FavListLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
   }) {
     return favListLoaded?.call(this);
   }
@@ -641,10 +643,10 @@ class _$_FavListLoaded implements _FavListLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_IsFavoriteMovie value)? isFavoriteMovie,
-    TResult Function(_Error value)? error,
-    TResult Function(_FavListLoaded value)? favListLoaded,
+    TResult Function(FavInitial value)? initial,
+    TResult Function(IsFavoriteMovie value)? isFavoriteMovie,
+    TResult Function(FavError value)? error,
+    TResult Function(FavListLoaded value)? favListLoaded,
     required TResult orElse(),
   }) {
     if (favListLoaded != null) {
@@ -654,11 +656,11 @@ class _$_FavListLoaded implements _FavListLoaded {
   }
 }
 
-abstract class _FavListLoaded implements FavoriteState {
-  const factory _FavListLoaded(List<PokemonListUi> data) = _$_FavListLoaded;
+abstract class FavListLoaded implements FavoriteState {
+  const factory FavListLoaded(List<PokemonListUi> data) = _$FavListLoaded;
 
   List<PokemonListUi> get data;
   @JsonKey(ignore: true)
-  _$FavListLoadedCopyWith<_FavListLoaded> get copyWith =>
+  $FavListLoadedCopyWith<FavListLoaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
