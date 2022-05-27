@@ -16,7 +16,7 @@ import 'package:pokemon/domain/usecases/favoritePokemon/check_if_pokemon_favorit
     as _i7;
 import 'package:pokemon/domain/usecases/favoritePokemon/delete_favorite_pokemon.dart'
     as _i6;
-import 'package:pokemon/domain/usecases/favoritePokemon/favorite_pokemon.dart'
+import 'package:pokemon/domain/usecases/favoritePokemon/add_favorite.dart'
     as _i5;
 import 'package:pokemon/domain/usecases/favoritePokemon/get_favorite_pokemons.dart'
     as _i9;
