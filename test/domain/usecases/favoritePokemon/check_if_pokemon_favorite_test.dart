@@ -33,7 +33,7 @@ void main() {
   );
 
   test(
-    'should return left from repo if error occusr',
+    'should return left from repo if error occusr ',
     () async {
       // arrange
       when(mockPokemonRepository.checkIfPokemonFav(any))

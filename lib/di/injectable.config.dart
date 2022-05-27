@@ -15,11 +15,11 @@ import '../data/mapper/pokemon_entity_mapper.dart' as _i8;
 import '../data/network/pokemon_remote_source.dart' as _i11;
 import '../data/repo_impl/pokemon_repo_impl.dart' as _i13;
 import '../domain/repositories/pokemon_repository.dart' as _i12;
+import '../domain/usecases/favoritePokemon/add_favorite.dart' as _i14;
 import '../domain/usecases/favoritePokemon/check_if_pokemon_favorite.dart'
     as _i15;
 import '../domain/usecases/favoritePokemon/delete_favorite_pokemon.dart'
     as _i16;
-import '../domain/usecases/favoritePokemon/add_favorite.dart' as _i14;
 import '../domain/usecases/favoritePokemon/get_favorite_pokemons.dart' as _i20;
 import '../domain/usecases/fetchAll/fetch_all_pokemon.dart' as _i17;
 import '../domain/usecases/fetchPokemon/fetch_pokemon.dart' as _i18;
