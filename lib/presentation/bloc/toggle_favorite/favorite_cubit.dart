@@ -39,6 +39,8 @@ class FavoriteCubit extends Cubit<FavoriteState> {
       await deleteFavorite(model.id);
     }
     final result = await checkIfPokemonFav(model.id);
+    
+     
     emit(result.fold((l) => FavoriteState.error(l.message),
         (r) => FavoriteState.isFavoriteMovie(r)));
   }

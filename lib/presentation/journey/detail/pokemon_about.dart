@@ -37,12 +37,11 @@ class PokemonAbout extends StatelessWidget {
           const SizedBox(
             height: Sizes.dimen_16,
           ),
-
-         
           ...data.stats
               .map((e) => StatesItem(
                   title: e.name,
-                  progressColor: data.bgColor,
+                  progressColor:
+                      data.bgColor ?? Theme.of(context).colorScheme.secondary,
                   progressValue: e.baseState))
               .toList()
         ],
