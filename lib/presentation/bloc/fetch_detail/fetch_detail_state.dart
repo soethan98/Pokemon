@@ -2,8 +2,8 @@ part of 'fetch_detail_cubit.dart';
 
 @freezed
 class FetchDetailState with _$FetchDetailState {
-  const factory FetchDetailState.initial() = _Initial;
-  const factory FetchDetailState.loading() = _Loading;
-  const factory FetchDetailState.error(String errMsg) = _Error;
-  const factory FetchDetailState.data(UiPokemonDetail pokemon) = _Data;
+  const factory FetchDetailState.initial() = DetailStateInitial;
+  const factory FetchDetailState.loading() = DetailStateLoading;
+  const factory FetchDetailState.error(String errMsg) = DetailStateError;
+  const factory FetchDetailState.data(UiPokemonDetail pokemon) = DetailStateData;
 }

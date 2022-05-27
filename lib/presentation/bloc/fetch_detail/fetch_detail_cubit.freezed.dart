@@ -18,22 +18,22 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$FetchDetailStateTearOff {
   const _$FetchDetailStateTearOff();
 
-  _Initial initial() {
-    return const _Initial();
+  DetailStateInitial initial() {
+    return const DetailStateInitial();
   }
 
-  _Loading loading() {
-    return const _Loading();
+  DetailStateLoading loading() {
+    return const DetailStateLoading();
   }
 
-  _Error error(String errMsg) {
-    return _Error(
+  DetailStateError error(String errMsg) {
+    return DetailStateError(
       errMsg,
     );
   }
 
-  _Data data(UiPokemonDetail pokemon) {
-    return _Data(
+  DetailStateData data(UiPokemonDetail pokemon) {
+    return DetailStateData(
       pokemon,
     );
   }
@@ -71,26 +71,26 @@ mixin _$FetchDetailState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(DetailStateInitial value) initial,
+    required TResult Function(DetailStateLoading value) loading,
+    required TResult Function(DetailStateError value) error,
+    required TResult Function(DetailStateData value) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,25 +114,28 @@ class _$FetchDetailStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class $DetailStateInitialCopyWith<$Res> {
+  factory $DetailStateInitialCopyWith(
+          DetailStateInitial value, $Res Function(DetailStateInitial) then) =
+      _$DetailStateInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$FetchDetailStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class _$DetailStateInitialCopyWithImpl<$Res>
+    extends _$FetchDetailStateCopyWithImpl<$Res>
+    implements $DetailStateInitialCopyWith<$Res> {
+  _$DetailStateInitialCopyWithImpl(
+      DetailStateInitial _value, $Res Function(DetailStateInitial) _then)
+      : super(_value, (v) => _then(v as DetailStateInitial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  DetailStateInitial get _value => super._value as DetailStateInitial;
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$DetailStateInitial implements DetailStateInitial {
+  const _$DetailStateInitial();
 
   @override
   String toString() {
@@ -142,7 +145,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is DetailStateInitial);
   }
 
   @override
@@ -188,10 +191,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(DetailStateInitial value) initial,
+    required TResult Function(DetailStateLoading value) loading,
+    required TResult Function(DetailStateError value) error,
+    required TResult Function(DetailStateData value) data,
   }) {
     return initial(this);
   }
@@ -199,10 +202,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
   }) {
     return initial?.call(this);
   }
@@ -210,10 +213,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -223,30 +226,33 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements FetchDetailState {
-  const factory _Initial() = _$_Initial;
+abstract class DetailStateInitial implements FetchDetailState {
+  const factory DetailStateInitial() = _$DetailStateInitial;
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class $DetailStateLoadingCopyWith<$Res> {
+  factory $DetailStateLoadingCopyWith(
+          DetailStateLoading value, $Res Function(DetailStateLoading) then) =
+      _$DetailStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$FetchDetailStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
+class _$DetailStateLoadingCopyWithImpl<$Res>
+    extends _$FetchDetailStateCopyWithImpl<$Res>
+    implements $DetailStateLoadingCopyWith<$Res> {
+  _$DetailStateLoadingCopyWithImpl(
+      DetailStateLoading _value, $Res Function(DetailStateLoading) _then)
+      : super(_value, (v) => _then(v as DetailStateLoading));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  DetailStateLoading get _value => super._value as DetailStateLoading;
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$DetailStateLoading implements DetailStateLoading {
+  const _$DetailStateLoading();
 
   @override
   String toString() {
@@ -256,7 +262,7 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Loading);
+        (other.runtimeType == runtimeType && other is DetailStateLoading);
   }
 
   @override
@@ -302,10 +308,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(DetailStateInitial value) initial,
+    required TResult Function(DetailStateLoading value) loading,
+    required TResult Function(DetailStateError value) error,
+    required TResult Function(DetailStateData value) data,
   }) {
     return loading(this);
   }
@@ -313,10 +319,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
   }) {
     return loading?.call(this);
   }
@@ -324,10 +330,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -337,31 +343,34 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements FetchDetailState {
-  const factory _Loading() = _$_Loading;
+abstract class DetailStateLoading implements FetchDetailState {
+  const factory DetailStateLoading() = _$DetailStateLoading;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class $DetailStateErrorCopyWith<$Res> {
+  factory $DetailStateErrorCopyWith(
+          DetailStateError value, $Res Function(DetailStateError) then) =
+      _$DetailStateErrorCopyWithImpl<$Res>;
   $Res call({String errMsg});
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$FetchDetailStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class _$DetailStateErrorCopyWithImpl<$Res>
+    extends _$FetchDetailStateCopyWithImpl<$Res>
+    implements $DetailStateErrorCopyWith<$Res> {
+  _$DetailStateErrorCopyWithImpl(
+      DetailStateError _value, $Res Function(DetailStateError) _then)
+      : super(_value, (v) => _then(v as DetailStateError));
 
   @override
-  _Error get _value => super._value as _Error;
+  DetailStateError get _value => super._value as DetailStateError;
 
   @override
   $Res call({
     Object? errMsg = freezed,
   }) {
-    return _then(_Error(
+    return _then(DetailStateError(
       errMsg == freezed
           ? _value.errMsg
           : errMsg // ignore: cast_nullable_to_non_nullable
@@ -372,8 +381,8 @@ class __$ErrorCopyWithImpl<$Res> extends _$FetchDetailStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error(this.errMsg);
+class _$DetailStateError implements DetailStateError {
+  const _$DetailStateError(this.errMsg);
 
   @override
   final String errMsg;
@@ -387,7 +396,7 @@ class _$_Error implements _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Error &&
+            other is DetailStateError &&
             const DeepCollectionEquality().equals(other.errMsg, errMsg));
   }
 
@@ -397,8 +406,8 @@ class _$_Error implements _Error {
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  $DetailStateErrorCopyWith<DetailStateError> get copyWith =>
+      _$DetailStateErrorCopyWithImpl<DetailStateError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -440,10 +449,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(DetailStateInitial value) initial,
+    required TResult Function(DetailStateLoading value) loading,
+    required TResult Function(DetailStateError value) error,
+    required TResult Function(DetailStateData value) data,
   }) {
     return error(this);
   }
@@ -451,10 +460,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
   }) {
     return error?.call(this);
   }
@@ -462,10 +471,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -475,35 +484,39 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements FetchDetailState {
-  const factory _Error(String errMsg) = _$_Error;
+abstract class DetailStateError implements FetchDetailState {
+  const factory DetailStateError(String errMsg) = _$DetailStateError;
 
   String get errMsg;
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  $DetailStateErrorCopyWith<DetailStateError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DataCopyWith<$Res> {
-  factory _$DataCopyWith(_Data value, $Res Function(_Data) then) =
-      __$DataCopyWithImpl<$Res>;
+abstract class $DetailStateDataCopyWith<$Res> {
+  factory $DetailStateDataCopyWith(
+          DetailStateData value, $Res Function(DetailStateData) then) =
+      _$DetailStateDataCopyWithImpl<$Res>;
   $Res call({UiPokemonDetail pokemon});
 }
 
 /// @nodoc
-class __$DataCopyWithImpl<$Res> extends _$FetchDetailStateCopyWithImpl<$Res>
-    implements _$DataCopyWith<$Res> {
-  __$DataCopyWithImpl(_Data _value, $Res Function(_Data) _then)
-      : super(_value, (v) => _then(v as _Data));
+class _$DetailStateDataCopyWithImpl<$Res>
+    extends _$FetchDetailStateCopyWithImpl<$Res>
+    implements $DetailStateDataCopyWith<$Res> {
+  _$DetailStateDataCopyWithImpl(
+      DetailStateData _value, $Res Function(DetailStateData) _then)
+      : super(_value, (v) => _then(v as DetailStateData));
 
   @override
-  _Data get _value => super._value as _Data;
+  DetailStateData get _value => super._value as DetailStateData;
 
   @override
   $Res call({
     Object? pokemon = freezed,
   }) {
-    return _then(_Data(
+    return _then(DetailStateData(
       pokemon == freezed
           ? _value.pokemon
           : pokemon // ignore: cast_nullable_to_non_nullable
@@ -514,8 +527,8 @@ class __$DataCopyWithImpl<$Res> extends _$FetchDetailStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Data implements _Data {
-  const _$_Data(this.pokemon);
+class _$DetailStateData implements DetailStateData {
+  const _$DetailStateData(this.pokemon);
 
   @override
   final UiPokemonDetail pokemon;
@@ -529,7 +542,7 @@ class _$_Data implements _Data {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Data &&
+            other is DetailStateData &&
             const DeepCollectionEquality().equals(other.pokemon, pokemon));
   }
 
@@ -539,8 +552,8 @@ class _$_Data implements _Data {
 
   @JsonKey(ignore: true)
   @override
-  _$DataCopyWith<_Data> get copyWith =>
-      __$DataCopyWithImpl<_Data>(this, _$identity);
+  $DetailStateDataCopyWith<DetailStateData> get copyWith =>
+      _$DetailStateDataCopyWithImpl<DetailStateData>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -582,10 +595,10 @@ class _$_Data implements _Data {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(DetailStateInitial value) initial,
+    required TResult Function(DetailStateLoading value) loading,
+    required TResult Function(DetailStateError value) error,
+    required TResult Function(DetailStateData value) data,
   }) {
     return data(this);
   }
@@ -593,10 +606,10 @@ class _$_Data implements _Data {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
   }) {
     return data?.call(this);
   }
@@ -604,10 +617,10 @@ class _$_Data implements _Data {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(DetailStateInitial value)? initial,
+    TResult Function(DetailStateLoading value)? loading,
+    TResult Function(DetailStateError value)? error,
+    TResult Function(DetailStateData value)? data,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -617,10 +630,11 @@ class _$_Data implements _Data {
   }
 }
 
-abstract class _Data implements FetchDetailState {
-  const factory _Data(UiPokemonDetail pokemon) = _$_Data;
+abstract class DetailStateData implements FetchDetailState {
+  const factory DetailStateData(UiPokemonDetail pokemon) = _$DetailStateData;
 
   UiPokemonDetail get pokemon;
   @JsonKey(ignore: true)
-  _$DataCopyWith<_Data> get copyWith => throw _privateConstructorUsedError;
+  $DetailStateDataCopyWith<DetailStateData> get copyWith =>
+      throw _privateConstructorUsedError;
 }

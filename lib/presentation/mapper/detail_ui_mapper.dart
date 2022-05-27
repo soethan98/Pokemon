@@ -16,11 +16,11 @@ class DetailUiMapper {
         weight: entity.weight,
         bgColor: getBackgroundColor(entity.types.first.type),
         imageUrl: 'https://cdn.traction.one/pokedex/pokemon/${entity.id}.png',
-        stats: mapStat(entity.stats),
+        stats: _mapStat(entity.stats),
         );
   }
 
-  List<UiStatDetail> mapStat(List<StatEntity> entities) => entities
+  List<UiStatDetail> _mapStat(List<StatEntity> entities) => entities
       .map((e) => UiStatDetail(name: e.name, baseState: e.baseStat))
       .toList();
 

@@ -7,18 +7,18 @@ import 'package:pokemon/domain/entities/pokemon_item_entity.dart';
 @lazySingleton
 class PokemonEntityMapper {
   List<PokemonItemEntity> fromRemoteList(PokemonsResponse response) {
-    return response.results.map(mapRemoteItem).toList();
+    return response.results.map(_mapRemoteItem).toList();
   }
 
-  PokemonItemEntity mapRemoteItem(PokemonListResponse item) {
+  PokemonItemEntity _mapRemoteItem(PokemonListResponse item) {
     return PokemonItemEntity(name: item.name, url: item.url);
   }
 
   List<PokemonItemEntity> fromLocalList(List<PokemonDetailCache> caches) {
-    return caches.map(mapLocalItem).toList();
+    return caches.map(_mapLocalItem).toList();
   }
 
-  PokemonItemEntity mapLocalItem(PokemonDetailCache item) {
+  PokemonItemEntity _mapLocalItem(PokemonDetailCache item) {
     return PokemonItemEntity(name: item.name, url: item.id.toString());
   }
 }
