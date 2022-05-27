@@ -8,10 +8,10 @@ import '../../domain/entities/pokemon_item_entity.dart';
 @lazySingleton
 class PokemonUiMapper {
   List<PokemonListUi> maps(List<PokemonItemEntity> items) =>
-      items.map(mapItem).toList();
+      items.map(_mapItem).toList();
 
-  PokemonListUi mapItem(PokemonItemEntity item) {
-    final number = getNumber(item.url);
+  PokemonListUi _mapItem(PokemonItemEntity item) {
+    final number = _getNumber(item.url);
     return PokemonListUi(
         name: item.name.capitalize(),
         imageUrl:
@@ -19,7 +19,7 @@ class PokemonUiMapper {
         number: number);
   }
 
-  int getNumber(String url) {
+  int _getNumber(String url) {
     final char = url.characters;
 
     final number = url.endsWith('/')
