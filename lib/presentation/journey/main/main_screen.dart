@@ -48,7 +48,10 @@ class _MainScreenState extends State<MainScreen> {
           builder: (context, state) {
             return Scaffold(
                 appBar: AppBar(
-                  title: const Text('Pokemon'),
+                  title: const Text(
+                    'Pokemon',
+                    key: Key('appbar_title'),
+                  ),
                 ),
                 body: currentScreen(state.index),
                 bottomNavigationBar: MainBottomNavigationBar(

@@ -2,41 +2,44 @@
 // in pokemon/test/helpers/test_helper.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i14;
+import 'dart:async' as _i17;
 
-import 'package:bloc/bloc.dart' as _i25;
+import 'package:bloc/bloc.dart' as _i29;
 import 'package:dartz/dartz.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:pokemon/data/local/pokemon_cache_source.dart' as _i27;
-import 'package:pokemon/data/mapper/pokemon_detail_mapper.dart' as _i24;
-import 'package:pokemon/data/mapper/pokemon_entity_mapper.dart' as _i22;
-import 'package:pokemon/data/model/pokemon_detail_cache.dart' as _i23;
-import 'package:pokemon/data/model/pokemon_detail_response.dart' as _i13;
-import 'package:pokemon/data/model/pokemons_response.dart' as _i12;
-import 'package:pokemon/data/network/pokemon_remote_source.dart' as _i26;
-import 'package:pokemon/domain/entities/app_error.dart' as _i15;
-import 'package:pokemon/domain/entities/no_params.dart' as _i17;
+import 'package:pokemon/data/local/pokemon_cache_source.dart' as _i28;
+import 'package:pokemon/data/mapper/pokemon_detail_mapper.dart' as _i26;
+import 'package:pokemon/data/mapper/pokemon_entity_mapper.dart' as _i24;
+import 'package:pokemon/data/model/pokemon_detail_cache.dart' as _i25;
+import 'package:pokemon/data/model/pokemon_detail_response.dart' as _i7;
+import 'package:pokemon/data/model/pokemons_response.dart' as _i6;
+import 'package:pokemon/data/network/pokemon_remote_source.dart' as _i27;
+import 'package:pokemon/domain/entities/app_error.dart' as _i18;
+import 'package:pokemon/domain/entities/no_params.dart' as _i20;
 import 'package:pokemon/domain/entities/pokemon_detail_entity.dart' as _i5;
-import 'package:pokemon/domain/entities/pokemon_item_entity.dart' as _i16;
+import 'package:pokemon/domain/entities/pokemon_item_entity.dart' as _i19;
 import 'package:pokemon/domain/repositories/pokemon_repository.dart' as _i2;
 import 'package:pokemon/domain/usecases/favoritePokemon/add_favorite.dart'
-    as _i6;
+    as _i12;
 import 'package:pokemon/domain/usecases/favoritePokemon/check_if_pokemon_favorite.dart'
-    as _i8;
+    as _i14;
 import 'package:pokemon/domain/usecases/favoritePokemon/delete_favorite_pokemon.dart'
-    as _i7;
+    as _i13;
 import 'package:pokemon/domain/usecases/favoritePokemon/get_favorite_pokemons.dart'
-    as _i10;
-import 'package:pokemon/domain/usecases/fetchAll/fetch_all_pokemon.dart'
-    as _i18;
+    as _i15;
+import 'package:pokemon/domain/usecases/fetchAll/fetch_all_pokemon.dart' as _i9;
 import 'package:pokemon/domain/usecases/fetchPokemon/fetch_pokemon.dart'
-    as _i19;
-import 'package:pokemon/presentation/bloc/toggle_favorite/favorite_cubit.dart'
+    as _i21;
+import 'package:pokemon/presentation/bloc/fetch_pokemons/fetch_pokemons_cubit.dart'
     as _i11;
-import 'package:pokemon/presentation/mapper/detail_ui_mapper.dart' as _i21;
-import 'package:pokemon/presentation/mapper/pokemon_ui_mapper.dart' as _i9;
+import 'package:pokemon/presentation/bloc/main_navbar/main_navbar_cubit.dart'
+    as _i8;
+import 'package:pokemon/presentation/bloc/toggle_favorite/favorite_cubit.dart'
+    as _i16;
+import 'package:pokemon/presentation/mapper/detail_ui_mapper.dart' as _i23;
+import 'package:pokemon/presentation/mapper/pokemon_ui_mapper.dart' as _i10;
 import 'package:pokemon/presentation/models/pokemon_detail_ui.dart' as _i4;
-import 'package:pokemon/presentation/models/pokemon_list_ui.dart' as _i20;
+import 'package:pokemon/presentation/models/pokemon_list_ui.dart' as _i22;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -58,31 +61,38 @@ class _FakeUiPokemonDetail_2 extends _i1.Fake implements _i4.UiPokemonDetail {}
 class _FakePokemonDetailEntity_3 extends _i1.Fake
     implements _i5.PokemonDetailEntity {}
 
-class _FakeAddFavorite_4 extends _i1.Fake implements _i6.AddFavorite {}
+class _FakePokemonsResponse_4 extends _i1.Fake implements _i6.PokemonsResponse {
+}
 
-class _FakeDeleteFavoritePokemon_5 extends _i1.Fake
-    implements _i7.DeleteFavoritePokemon {}
+class _FakePokemonDetailResponse_5 extends _i1.Fake
+    implements _i7.PokemonDetailResponse {}
 
-class _FakeCheckIfPokemonFav_6 extends _i1.Fake
-    implements _i8.CheckIfPokemonFav {}
+class _FakeMainNavbarState_6 extends _i1.Fake implements _i8.MainNavbarState {}
 
-class _FakePokemonUiMapper_7 extends _i1.Fake implements _i9.PokemonUiMapper {}
+class _FakeFetchAllPokemon_7 extends _i1.Fake implements _i9.FetchAllPokemon {}
 
-class _FakeGetFavoritePokemons_8 extends _i1.Fake
-    implements _i10.GetFavoritePokemons {}
+class _FakePokemonUiMapper_8 extends _i1.Fake implements _i10.PokemonUiMapper {}
 
-class _FakeFavoriteState_9 extends _i1.Fake implements _i11.FavoriteState {}
+class _FakeFetchPokemonsState_9 extends _i1.Fake
+    implements _i11.FetchPokemonsState {}
 
-class _FakePokemonsResponse_10 extends _i1.Fake
-    implements _i12.PokemonsResponse {}
+class _FakeAddFavorite_10 extends _i1.Fake implements _i12.AddFavorite {}
 
-class _FakePokemonDetailResponse_11 extends _i1.Fake
-    implements _i13.PokemonDetailResponse {}
+class _FakeDeleteFavoritePokemon_11 extends _i1.Fake
+    implements _i13.DeleteFavoritePokemon {}
+
+class _FakeCheckIfPokemonFav_12 extends _i1.Fake
+    implements _i14.CheckIfPokemonFav {}
+
+class _FakeGetFavoritePokemons_13 extends _i1.Fake
+    implements _i15.GetFavoritePokemons {}
+
+class _FakeFavoriteState_14 extends _i1.Fake implements _i16.FavoriteState {}
 
 /// A class which mocks [CheckIfPokemonFav].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockCheckIfPokemonFav extends _i1.Mock implements _i8.CheckIfPokemonFav {
+class MockCheckIfPokemonFav extends _i1.Mock implements _i14.CheckIfPokemonFav {
   MockCheckIfPokemonFav() {
     _i1.throwOnMissingStub(this);
   }
@@ -92,18 +102,18 @@ class MockCheckIfPokemonFav extends _i1.Mock implements _i8.CheckIfPokemonFav {
       (super.noSuchMethod(Invocation.getter(#repository),
           returnValue: _FakePokemonRepository_0()) as _i2.PokemonRepository);
   @override
-  _i14.Future<_i3.Either<_i15.AppError, bool>> call(int? params) =>
+  _i17.Future<_i3.Either<_i18.AppError, bool>> call(int? params) =>
       (super.noSuchMethod(Invocation.method(#call, [params]),
-              returnValue: Future<_i3.Either<_i15.AppError, bool>>.value(
-                  _FakeEither_1<_i15.AppError, bool>()))
-          as _i14.Future<_i3.Either<_i15.AppError, bool>>);
+              returnValue: Future<_i3.Either<_i18.AppError, bool>>.value(
+                  _FakeEither_1<_i18.AppError, bool>()))
+          as _i17.Future<_i3.Either<_i18.AppError, bool>>);
 }
 
 /// A class which mocks [GetFavoritePokemons].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockGetFavoritePokemons extends _i1.Mock
-    implements _i10.GetFavoritePokemons {
+    implements _i15.GetFavoritePokemons {
   MockGetFavoritePokemons() {
     _i1.throwOnMissingStub(this);
   }
@@ -113,20 +123,20 @@ class MockGetFavoritePokemons extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#repository),
           returnValue: _FakePokemonRepository_0()) as _i2.PokemonRepository);
   @override
-  _i14.Future<_i3.Either<_i15.AppError, List<_i16.PokemonItemEntity>>> call(
-          _i17.NoParams? params) =>
+  _i17.Future<_i3.Either<_i18.AppError, List<_i19.PokemonItemEntity>>> call(
+          _i20.NoParams? params) =>
       (super.noSuchMethod(Invocation.method(#call, [params]),
               returnValue: Future<
-                      _i3.Either<_i15.AppError,
-                          List<_i16.PokemonItemEntity>>>.value(
-                  _FakeEither_1<_i15.AppError, List<_i16.PokemonItemEntity>>()))
-          as _i14.Future<_i3.Either<_i15.AppError, List<_i16.PokemonItemEntity>>>);
+                      _i3.Either<_i18.AppError,
+                          List<_i19.PokemonItemEntity>>>.value(
+                  _FakeEither_1<_i18.AppError, List<_i19.PokemonItemEntity>>()))
+          as _i17.Future<_i3.Either<_i18.AppError, List<_i19.PokemonItemEntity>>>);
 }
 
 /// A class which mocks [AddFavorite].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAddFavorite extends _i1.Mock implements _i6.AddFavorite {
+class MockAddFavorite extends _i1.Mock implements _i12.AddFavorite {
   MockAddFavorite() {
     _i1.throwOnMissingStub(this);
   }
@@ -136,19 +146,19 @@ class MockAddFavorite extends _i1.Mock implements _i6.AddFavorite {
       (super.noSuchMethod(Invocation.getter(#repository),
           returnValue: _FakePokemonRepository_0()) as _i2.PokemonRepository);
   @override
-  _i14.Future<_i3.Either<_i15.AppError, void>> call(
+  _i17.Future<_i3.Either<_i18.AppError, void>> call(
           _i5.PokemonDetailEntity? params) =>
       (super.noSuchMethod(Invocation.method(#call, [params]),
-              returnValue: Future<_i3.Either<_i15.AppError, void>>.value(
-                  _FakeEither_1<_i15.AppError, void>()))
-          as _i14.Future<_i3.Either<_i15.AppError, void>>);
+              returnValue: Future<_i3.Either<_i18.AppError, void>>.value(
+                  _FakeEither_1<_i18.AppError, void>()))
+          as _i17.Future<_i3.Either<_i18.AppError, void>>);
 }
 
 /// A class which mocks [DeleteFavoritePokemon].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockDeleteFavoritePokemon extends _i1.Mock
-    implements _i7.DeleteFavoritePokemon {
+    implements _i13.DeleteFavoritePokemon {
   MockDeleteFavoritePokemon() {
     _i1.throwOnMissingStub(this);
   }
@@ -158,17 +168,17 @@ class MockDeleteFavoritePokemon extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#repository),
           returnValue: _FakePokemonRepository_0()) as _i2.PokemonRepository);
   @override
-  _i14.Future<_i3.Either<_i15.AppError, void>> call(int? params) =>
+  _i17.Future<_i3.Either<_i18.AppError, void>> call(int? params) =>
       (super.noSuchMethod(Invocation.method(#call, [params]),
-              returnValue: Future<_i3.Either<_i15.AppError, void>>.value(
-                  _FakeEither_1<_i15.AppError, void>()))
-          as _i14.Future<_i3.Either<_i15.AppError, void>>);
+              returnValue: Future<_i3.Either<_i18.AppError, void>>.value(
+                  _FakeEither_1<_i18.AppError, void>()))
+          as _i17.Future<_i3.Either<_i18.AppError, void>>);
 }
 
 /// A class which mocks [FetchAllPokemon].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockFetchAllPokemon extends _i1.Mock implements _i18.FetchAllPokemon {
+class MockFetchAllPokemon extends _i1.Mock implements _i9.FetchAllPokemon {
   MockFetchAllPokemon() {
     _i1.throwOnMissingStub(this);
   }
@@ -178,20 +188,20 @@ class MockFetchAllPokemon extends _i1.Mock implements _i18.FetchAllPokemon {
       (super.noSuchMethod(Invocation.getter(#repository),
           returnValue: _FakePokemonRepository_0()) as _i2.PokemonRepository);
   @override
-  _i14.Future<_i3.Either<_i15.AppError, List<_i16.PokemonItemEntity>>> call(
-          _i17.NoParams? params) =>
+  _i17.Future<_i3.Either<_i18.AppError, List<_i19.PokemonItemEntity>>> call(
+          _i20.NoParams? params) =>
       (super.noSuchMethod(Invocation.method(#call, [params]),
               returnValue: Future<
-                      _i3.Either<_i15.AppError,
-                          List<_i16.PokemonItemEntity>>>.value(
-                  _FakeEither_1<_i15.AppError, List<_i16.PokemonItemEntity>>()))
-          as _i14.Future<_i3.Either<_i15.AppError, List<_i16.PokemonItemEntity>>>);
+                      _i3.Either<_i18.AppError,
+                          List<_i19.PokemonItemEntity>>>.value(
+                  _FakeEither_1<_i18.AppError, List<_i19.PokemonItemEntity>>()))
+          as _i17.Future<_i3.Either<_i18.AppError, List<_i19.PokemonItemEntity>>>);
 }
 
 /// A class which mocks [FetchPokemon].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockFetchPokemon extends _i1.Mock implements _i19.FetchPokemon {
+class MockFetchPokemon extends _i1.Mock implements _i21.FetchPokemon {
   MockFetchPokemon() {
     _i1.throwOnMissingStub(this);
   }
@@ -201,33 +211,33 @@ class MockFetchPokemon extends _i1.Mock implements _i19.FetchPokemon {
       (super.noSuchMethod(Invocation.getter(#repository),
           returnValue: _FakePokemonRepository_0()) as _i2.PokemonRepository);
   @override
-  _i14.Future<_i3.Either<_i15.AppError, _i5.PokemonDetailEntity>> call(
+  _i17.Future<_i3.Either<_i18.AppError, _i5.PokemonDetailEntity>> call(
           int? params) =>
       (super.noSuchMethod(Invocation.method(#call, [params]),
               returnValue: Future<
-                      _i3.Either<_i15.AppError, _i5.PokemonDetailEntity>>.value(
-                  _FakeEither_1<_i15.AppError, _i5.PokemonDetailEntity>()))
-          as _i14.Future<_i3.Either<_i15.AppError, _i5.PokemonDetailEntity>>);
+                      _i3.Either<_i18.AppError, _i5.PokemonDetailEntity>>.value(
+                  _FakeEither_1<_i18.AppError, _i5.PokemonDetailEntity>()))
+          as _i17.Future<_i3.Either<_i18.AppError, _i5.PokemonDetailEntity>>);
 }
 
 /// A class which mocks [PokemonUiMapper].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockPokemonUiMapper extends _i1.Mock implements _i9.PokemonUiMapper {
+class MockPokemonUiMapper extends _i1.Mock implements _i10.PokemonUiMapper {
   MockPokemonUiMapper() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  List<_i20.PokemonListUi> maps(List<_i16.PokemonItemEntity>? items) =>
+  List<_i22.PokemonListUi> maps(List<_i19.PokemonItemEntity>? items) =>
       (super.noSuchMethod(Invocation.method(#maps, [items]),
-          returnValue: <_i20.PokemonListUi>[]) as List<_i20.PokemonListUi>);
+          returnValue: <_i22.PokemonListUi>[]) as List<_i22.PokemonListUi>);
 }
 
 /// A class which mocks [DetailUiMapper].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockDetailUiMapper extends _i1.Mock implements _i21.DetailUiMapper {
+class MockDetailUiMapper extends _i1.Mock implements _i23.DetailUiMapper {
   MockDetailUiMapper() {
     _i1.throwOnMissingStub(this);
   }
@@ -242,78 +252,287 @@ class MockDetailUiMapper extends _i1.Mock implements _i21.DetailUiMapper {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockPokemonEntityMapper extends _i1.Mock
-    implements _i22.PokemonEntityMapper {
+    implements _i24.PokemonEntityMapper {
   MockPokemonEntityMapper() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  List<_i16.PokemonItemEntity> fromRemoteList(
-          _i12.PokemonsResponse? response) =>
+  List<_i19.PokemonItemEntity> fromRemoteList(_i6.PokemonsResponse? response) =>
       (super.noSuchMethod(Invocation.method(#fromRemoteList, [response]),
-              returnValue: <_i16.PokemonItemEntity>[])
-          as List<_i16.PokemonItemEntity>);
+              returnValue: <_i19.PokemonItemEntity>[])
+          as List<_i19.PokemonItemEntity>);
   @override
-  List<_i16.PokemonItemEntity> fromLocalList(
-          List<_i23.PokemonDetailCache>? caches) =>
+  List<_i19.PokemonItemEntity> fromLocalList(
+          List<_i25.PokemonDetailCache>? caches) =>
       (super.noSuchMethod(Invocation.method(#fromLocalList, [caches]),
-              returnValue: <_i16.PokemonItemEntity>[])
-          as List<_i16.PokemonItemEntity>);
+              returnValue: <_i19.PokemonItemEntity>[])
+          as List<_i19.PokemonItemEntity>);
 }
 
 /// A class which mocks [PokemonDetailMapper].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockPokemonDetailMapper extends _i1.Mock
-    implements _i24.PokemonDetailMapper {
+    implements _i26.PokemonDetailMapper {
   MockPokemonDetailMapper() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i5.PokemonDetailEntity mapItem(_i13.PokemonDetailResponse? response) =>
+  _i5.PokemonDetailEntity mapItem(_i7.PokemonDetailResponse? response) =>
       (super.noSuchMethod(Invocation.method(#mapItem, [response]),
               returnValue: _FakePokemonDetailEntity_3())
           as _i5.PokemonDetailEntity);
 }
 
+/// A class which mocks [PokemonRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockPokemonRepository extends _i1.Mock implements _i2.PokemonRepository {
+  MockPokemonRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i17.Future<_i3.Either<_i18.AppError, List<_i19.PokemonItemEntity>>>
+      getPokemons() => (super.noSuchMethod(Invocation.method(#getPokemons, []),
+              returnValue: Future<
+                      _i3.Either<_i18.AppError,
+                          List<_i19.PokemonItemEntity>>>.value(
+                  _FakeEither_1<_i18.AppError, List<_i19.PokemonItemEntity>>()))
+          as _i17.Future<_i3.Either<_i18.AppError, List<_i19.PokemonItemEntity>>>);
+  @override
+  _i17.Future<_i3.Either<_i18.AppError, List<_i19.PokemonItemEntity>>>
+      getFavoritePokemons() => (super.noSuchMethod(
+          Invocation.method(#getFavoritePokemons, []),
+          returnValue:
+              Future<_i3.Either<_i18.AppError, List<_i19.PokemonItemEntity>>>.value(
+                  _FakeEither_1<_i18.AppError,
+                      List<_i19.PokemonItemEntity>>())) as _i17
+          .Future<_i3.Either<_i18.AppError, List<_i19.PokemonItemEntity>>>);
+  @override
+  _i17.Future<_i3.Either<_i18.AppError, _i5.PokemonDetailEntity>> getPokemon(
+          int? id) =>
+      (super.noSuchMethod(Invocation.method(#getPokemon, [id]),
+              returnValue: Future<
+                      _i3.Either<_i18.AppError, _i5.PokemonDetailEntity>>.value(
+                  _FakeEither_1<_i18.AppError, _i5.PokemonDetailEntity>()))
+          as _i17.Future<_i3.Either<_i18.AppError, _i5.PokemonDetailEntity>>);
+  @override
+  _i17.Future<_i3.Either<_i18.AppError, void>> savePokemon(
+          _i5.PokemonDetailEntity? entity) =>
+      (super.noSuchMethod(Invocation.method(#savePokemon, [entity]),
+              returnValue: Future<_i3.Either<_i18.AppError, void>>.value(
+                  _FakeEither_1<_i18.AppError, void>()))
+          as _i17.Future<_i3.Either<_i18.AppError, void>>);
+  @override
+  _i17.Future<_i3.Either<_i18.AppError, void>> deleteFavPokemon(int? id) =>
+      (super.noSuchMethod(Invocation.method(#deleteFavPokemon, [id]),
+              returnValue: Future<_i3.Either<_i18.AppError, void>>.value(
+                  _FakeEither_1<_i18.AppError, void>()))
+          as _i17.Future<_i3.Either<_i18.AppError, void>>);
+  @override
+  _i17.Future<_i3.Either<_i18.AppError, bool>> checkIfPokemonFav(int? id) =>
+      (super.noSuchMethod(Invocation.method(#checkIfPokemonFav, [id]),
+              returnValue: Future<_i3.Either<_i18.AppError, bool>>.value(
+                  _FakeEither_1<_i18.AppError, bool>()))
+          as _i17.Future<_i3.Either<_i18.AppError, bool>>);
+}
+
+/// A class which mocks [PokemonRemoteSource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockPokemonRemoteSource extends _i1.Mock
+    implements _i27.PokemonRemoteSource {
+  MockPokemonRemoteSource() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i17.Future<_i6.PokemonsResponse> getPokemons() =>
+      (super.noSuchMethod(Invocation.method(#getPokemons, []),
+              returnValue:
+                  Future<_i6.PokemonsResponse>.value(_FakePokemonsResponse_4()))
+          as _i17.Future<_i6.PokemonsResponse>);
+  @override
+  _i17.Future<_i7.PokemonDetailResponse> getPokemonById(int? id) =>
+      (super.noSuchMethod(Invocation.method(#getPokemonById, [id]),
+              returnValue: Future<_i7.PokemonDetailResponse>.value(
+                  _FakePokemonDetailResponse_5()))
+          as _i17.Future<_i7.PokemonDetailResponse>);
+}
+
+/// A class which mocks [PokemonCacheSource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockPokemonCacheSource extends _i1.Mock
+    implements _i28.PokemonCacheSource {
+  MockPokemonCacheSource() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i17.Future<List<_i25.PokemonDetailCache>> getPokemons() =>
+      (super.noSuchMethod(Invocation.method(#getPokemons, []),
+              returnValue: Future<List<_i25.PokemonDetailCache>>.value(
+                  <_i25.PokemonDetailCache>[]))
+          as _i17.Future<List<_i25.PokemonDetailCache>>);
+  @override
+  _i17.Future<void> savePokemonInCache(_i25.PokemonDetailCache? pokemon) =>
+      (super.noSuchMethod(Invocation.method(#savePokemonInCache, [pokemon]),
+              returnValue: Future<void>.value(),
+              returnValueForMissingStub: Future<void>.value())
+          as _i17.Future<void>);
+  @override
+  _i17.Future<void> removePokemon(int? id) => (super.noSuchMethod(
+      Invocation.method(#removePokemon, [id]),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i17.Future<void>);
+  @override
+  _i17.Future<bool> checkIfFav(int? id) =>
+      (super.noSuchMethod(Invocation.method(#checkIfFav, [id]),
+          returnValue: Future<bool>.value(false)) as _i17.Future<bool>);
+}
+
+/// A class which mocks [MainNavbarCubit].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockMainNavbarCubit extends _i1.Mock implements _i8.MainNavbarCubit {
+  MockMainNavbarCubit() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i8.MainNavbarState get state =>
+      (super.noSuchMethod(Invocation.getter(#state),
+          returnValue: _FakeMainNavbarState_6()) as _i8.MainNavbarState);
+  @override
+  _i17.Stream<_i8.MainNavbarState> get stream =>
+      (super.noSuchMethod(Invocation.getter(#stream),
+              returnValue: Stream<_i8.MainNavbarState>.empty())
+          as _i17.Stream<_i8.MainNavbarState>);
+  @override
+  bool get isClosed =>
+      (super.noSuchMethod(Invocation.getter(#isClosed), returnValue: false)
+          as bool);
+  @override
+  void selectPage(int? i) =>
+      super.noSuchMethod(Invocation.method(#selectPage, [i]),
+          returnValueForMissingStub: null);
+  @override
+  void emit(_i8.MainNavbarState? state) =>
+      super.noSuchMethod(Invocation.method(#emit, [state]),
+          returnValueForMissingStub: null);
+  @override
+  void onChange(_i29.Change<_i8.MainNavbarState>? change) =>
+      super.noSuchMethod(Invocation.method(#onChange, [change]),
+          returnValueForMissingStub: null);
+  @override
+  void addError(Object? error, [StackTrace? stackTrace]) =>
+      super.noSuchMethod(Invocation.method(#addError, [error, stackTrace]),
+          returnValueForMissingStub: null);
+  @override
+  void onError(Object? error, StackTrace? stackTrace) =>
+      super.noSuchMethod(Invocation.method(#onError, [error, stackTrace]),
+          returnValueForMissingStub: null);
+  @override
+  _i17.Future<void> close() => (super.noSuchMethod(
+      Invocation.method(#close, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i17.Future<void>);
+}
+
+/// A class which mocks [FetchPokemonsCubit].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockFetchPokemonsCubit extends _i1.Mock
+    implements _i11.FetchPokemonsCubit {
+  MockFetchPokemonsCubit() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i9.FetchAllPokemon get fetchAllPokemon =>
+      (super.noSuchMethod(Invocation.getter(#fetchAllPokemon),
+          returnValue: _FakeFetchAllPokemon_7()) as _i9.FetchAllPokemon);
+  @override
+  _i10.PokemonUiMapper get uiMapper =>
+      (super.noSuchMethod(Invocation.getter(#uiMapper),
+          returnValue: _FakePokemonUiMapper_8()) as _i10.PokemonUiMapper);
+  @override
+  _i11.FetchPokemonsState get state =>
+      (super.noSuchMethod(Invocation.getter(#state),
+          returnValue: _FakeFetchPokemonsState_9()) as _i11.FetchPokemonsState);
+  @override
+  _i17.Stream<_i11.FetchPokemonsState> get stream =>
+      (super.noSuchMethod(Invocation.getter(#stream),
+              returnValue: Stream<_i11.FetchPokemonsState>.empty())
+          as _i17.Stream<_i11.FetchPokemonsState>);
+  @override
+  bool get isClosed =>
+      (super.noSuchMethod(Invocation.getter(#isClosed), returnValue: false)
+          as bool);
+  @override
+  void emit(_i11.FetchPokemonsState? state) =>
+      super.noSuchMethod(Invocation.method(#emit, [state]),
+          returnValueForMissingStub: null);
+  @override
+  void onChange(_i29.Change<_i11.FetchPokemonsState>? change) =>
+      super.noSuchMethod(Invocation.method(#onChange, [change]),
+          returnValueForMissingStub: null);
+  @override
+  void addError(Object? error, [StackTrace? stackTrace]) =>
+      super.noSuchMethod(Invocation.method(#addError, [error, stackTrace]),
+          returnValueForMissingStub: null);
+  @override
+  void onError(Object? error, StackTrace? stackTrace) =>
+      super.noSuchMethod(Invocation.method(#onError, [error, stackTrace]),
+          returnValueForMissingStub: null);
+  @override
+  _i17.Future<void> close() => (super.noSuchMethod(
+      Invocation.method(#close, []),
+      returnValue: Future<void>.value(),
+      returnValueForMissingStub: Future<void>.value()) as _i17.Future<void>);
+}
+
 /// A class which mocks [FavoriteCubit].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockFavoriteCubit extends _i1.Mock implements _i11.FavoriteCubit {
+class MockFavoriteCubit extends _i1.Mock implements _i16.FavoriteCubit {
   MockFavoriteCubit() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i6.AddFavorite get addFavorite =>
+  _i12.AddFavorite get addFavorite =>
       (super.noSuchMethod(Invocation.getter(#addFavorite),
-          returnValue: _FakeAddFavorite_4()) as _i6.AddFavorite);
+          returnValue: _FakeAddFavorite_10()) as _i12.AddFavorite);
   @override
-  _i7.DeleteFavoritePokemon get deleteFavorite =>
+  _i13.DeleteFavoritePokemon get deleteFavorite =>
       (super.noSuchMethod(Invocation.getter(#deleteFavorite),
-              returnValue: _FakeDeleteFavoritePokemon_5())
-          as _i7.DeleteFavoritePokemon);
+              returnValue: _FakeDeleteFavoritePokemon_11())
+          as _i13.DeleteFavoritePokemon);
   @override
-  _i8.CheckIfPokemonFav get checkIfPokemonFav =>
+  _i14.CheckIfPokemonFav get checkIfPokemonFav =>
       (super.noSuchMethod(Invocation.getter(#checkIfPokemonFav),
-          returnValue: _FakeCheckIfPokemonFav_6()) as _i8.CheckIfPokemonFav);
+          returnValue: _FakeCheckIfPokemonFav_12()) as _i14.CheckIfPokemonFav);
   @override
-  _i9.PokemonUiMapper get uiMapper =>
+  _i10.PokemonUiMapper get uiMapper =>
       (super.noSuchMethod(Invocation.getter(#uiMapper),
-          returnValue: _FakePokemonUiMapper_7()) as _i9.PokemonUiMapper);
+          returnValue: _FakePokemonUiMapper_8()) as _i10.PokemonUiMapper);
   @override
-  _i10.GetFavoritePokemons get getFavoritePokemons => (super.noSuchMethod(
+  _i15.GetFavoritePokemons get getFavoritePokemons => (super.noSuchMethod(
       Invocation.getter(#getFavoritePokemons),
-      returnValue: _FakeGetFavoritePokemons_8()) as _i10.GetFavoritePokemons);
+      returnValue: _FakeGetFavoritePokemons_13()) as _i15.GetFavoritePokemons);
   @override
-  _i11.FavoriteState get state => (super.noSuchMethod(Invocation.getter(#state),
-      returnValue: _FakeFavoriteState_9()) as _i11.FavoriteState);
+  _i16.FavoriteState get state => (super.noSuchMethod(Invocation.getter(#state),
+      returnValue: _FakeFavoriteState_14()) as _i16.FavoriteState);
   @override
-  _i14.Stream<_i11.FavoriteState> get stream =>
+  _i17.Stream<_i16.FavoriteState> get stream =>
       (super.noSuchMethod(Invocation.getter(#stream),
-              returnValue: Stream<_i11.FavoriteState>.empty())
-          as _i14.Stream<_i11.FavoriteState>);
+              returnValue: Stream<_i16.FavoriteState>.empty())
+          as _i17.Stream<_i16.FavoriteState>);
   @override
   bool get isClosed =>
       (super.noSuchMethod(Invocation.getter(#isClosed), returnValue: false)
@@ -331,11 +550,11 @@ class MockFavoriteCubit extends _i1.Mock implements _i11.FavoriteCubit {
       super.noSuchMethod(Invocation.method(#getFavorites, []),
           returnValueForMissingStub: null);
   @override
-  void emit(_i11.FavoriteState? state) =>
+  void emit(_i16.FavoriteState? state) =>
       super.noSuchMethod(Invocation.method(#emit, [state]),
           returnValueForMissingStub: null);
   @override
-  void onChange(_i25.Change<_i11.FavoriteState>? change) =>
+  void onChange(_i29.Change<_i16.FavoriteState>? change) =>
       super.noSuchMethod(Invocation.method(#onChange, [change]),
           returnValueForMissingStub: null);
   @override
@@ -347,117 +566,8 @@ class MockFavoriteCubit extends _i1.Mock implements _i11.FavoriteCubit {
       super.noSuchMethod(Invocation.method(#onError, [error, stackTrace]),
           returnValueForMissingStub: null);
   @override
-  _i14.Future<void> close() => (super.noSuchMethod(
+  _i17.Future<void> close() => (super.noSuchMethod(
       Invocation.method(#close, []),
       returnValue: Future<void>.value(),
-      returnValueForMissingStub: Future<void>.value()) as _i14.Future<void>);
-}
-
-/// A class which mocks [PokemonRepository].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockPokemonRepository extends _i1.Mock implements _i2.PokemonRepository {
-  MockPokemonRepository() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i14.Future<_i3.Either<_i15.AppError, List<_i16.PokemonItemEntity>>>
-      getPokemons() => (super.noSuchMethod(Invocation.method(#getPokemons, []),
-              returnValue: Future<
-                      _i3.Either<_i15.AppError,
-                          List<_i16.PokemonItemEntity>>>.value(
-                  _FakeEither_1<_i15.AppError, List<_i16.PokemonItemEntity>>()))
-          as _i14.Future<_i3.Either<_i15.AppError, List<_i16.PokemonItemEntity>>>);
-  @override
-  _i14.Future<_i3.Either<_i15.AppError, List<_i16.PokemonItemEntity>>>
-      getFavoritePokemons() => (super.noSuchMethod(
-          Invocation.method(#getFavoritePokemons, []),
-          returnValue:
-              Future<_i3.Either<_i15.AppError, List<_i16.PokemonItemEntity>>>.value(
-                  _FakeEither_1<_i15.AppError,
-                      List<_i16.PokemonItemEntity>>())) as _i14
-          .Future<_i3.Either<_i15.AppError, List<_i16.PokemonItemEntity>>>);
-  @override
-  _i14.Future<_i3.Either<_i15.AppError, _i5.PokemonDetailEntity>> getPokemon(
-          int? id) =>
-      (super.noSuchMethod(Invocation.method(#getPokemon, [id]),
-              returnValue: Future<
-                      _i3.Either<_i15.AppError, _i5.PokemonDetailEntity>>.value(
-                  _FakeEither_1<_i15.AppError, _i5.PokemonDetailEntity>()))
-          as _i14.Future<_i3.Either<_i15.AppError, _i5.PokemonDetailEntity>>);
-  @override
-  _i14.Future<_i3.Either<_i15.AppError, void>> savePokemon(
-          _i5.PokemonDetailEntity? entity) =>
-      (super.noSuchMethod(Invocation.method(#savePokemon, [entity]),
-              returnValue: Future<_i3.Either<_i15.AppError, void>>.value(
-                  _FakeEither_1<_i15.AppError, void>()))
-          as _i14.Future<_i3.Either<_i15.AppError, void>>);
-  @override
-  _i14.Future<_i3.Either<_i15.AppError, void>> deleteFavPokemon(int? id) =>
-      (super.noSuchMethod(Invocation.method(#deleteFavPokemon, [id]),
-              returnValue: Future<_i3.Either<_i15.AppError, void>>.value(
-                  _FakeEither_1<_i15.AppError, void>()))
-          as _i14.Future<_i3.Either<_i15.AppError, void>>);
-  @override
-  _i14.Future<_i3.Either<_i15.AppError, bool>> checkIfPokemonFav(int? id) =>
-      (super.noSuchMethod(Invocation.method(#checkIfPokemonFav, [id]),
-              returnValue: Future<_i3.Either<_i15.AppError, bool>>.value(
-                  _FakeEither_1<_i15.AppError, bool>()))
-          as _i14.Future<_i3.Either<_i15.AppError, bool>>);
-}
-
-/// A class which mocks [PokemonRemoteSource].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockPokemonRemoteSource extends _i1.Mock
-    implements _i26.PokemonRemoteSource {
-  MockPokemonRemoteSource() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i14.Future<_i12.PokemonsResponse> getPokemons() => (super.noSuchMethod(
-          Invocation.method(#getPokemons, []),
-          returnValue:
-              Future<_i12.PokemonsResponse>.value(_FakePokemonsResponse_10()))
-      as _i14.Future<_i12.PokemonsResponse>);
-  @override
-  _i14.Future<_i13.PokemonDetailResponse> getPokemonById(int? id) =>
-      (super.noSuchMethod(Invocation.method(#getPokemonById, [id]),
-              returnValue: Future<_i13.PokemonDetailResponse>.value(
-                  _FakePokemonDetailResponse_11()))
-          as _i14.Future<_i13.PokemonDetailResponse>);
-}
-
-/// A class which mocks [PokemonCacheSource].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockPokemonCacheSource extends _i1.Mock
-    implements _i27.PokemonCacheSource {
-  MockPokemonCacheSource() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i14.Future<List<_i23.PokemonDetailCache>> getPokemons() =>
-      (super.noSuchMethod(Invocation.method(#getPokemons, []),
-              returnValue: Future<List<_i23.PokemonDetailCache>>.value(
-                  <_i23.PokemonDetailCache>[]))
-          as _i14.Future<List<_i23.PokemonDetailCache>>);
-  @override
-  _i14.Future<void> savePokemonInCache(_i23.PokemonDetailCache? pokemon) =>
-      (super.noSuchMethod(Invocation.method(#savePokemonInCache, [pokemon]),
-              returnValue: Future<void>.value(),
-              returnValueForMissingStub: Future<void>.value())
-          as _i14.Future<void>);
-  @override
-  _i14.Future<void> removePokemon(int? id) => (super.noSuchMethod(
-      Invocation.method(#removePokemon, [id]),
-      returnValue: Future<void>.value(),
-      returnValueForMissingStub: Future<void>.value()) as _i14.Future<void>);
-  @override
-  _i14.Future<bool> checkIfFav(int? id) =>
-      (super.noSuchMethod(Invocation.method(#checkIfFav, [id]),
-          returnValue: Future<bool>.value(false)) as _i14.Future<bool>);
+      returnValueForMissingStub: Future<void>.value()) as _i17.Future<void>);
 }
